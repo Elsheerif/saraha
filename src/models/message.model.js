@@ -37,7 +37,7 @@ exports.MessageModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const messageSchema = new mongoose_1.Schema({
     sender: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
-    receiver: { type: mongoose_1.Schema.Types.ObjectId, ref: "User" },
+    receiver: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
     content: { type: String, required: true, trim: true },
 }, { timestamps: true });
 exports.MessageModel = mongoose_1.default.model("Message", messageSchema);
